@@ -1,6 +1,8 @@
-class Api::PropertiesController < ApplicationController
+class Api::V1::PropertiesController < ApplicationController
   def index
     # Return a list of properties
+    properties = Property.all
+    render json: properties, status: :ok
   end
 
   def show
@@ -28,6 +30,7 @@ class Api::PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:title, :img_url1, :img_url2, :img_url3, :img_url4, :img_url5, :description, :price, :bedrooms, :baths, :kitchen, :store, :water, :electricity, :security, :parking, :location, :payment_freq, :property_type)
+    params.require(:property).permit(:title, :property_type, :price, :payment_freq, :location, :description, :parking, :bedrooms, :baths, :kitchen, :store, :water, :electricity, :security, :img_url1, :img_url2, :img_url3, :img_url4, :img_url5)
   end
 end
+
