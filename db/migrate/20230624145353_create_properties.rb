@@ -1,0 +1,27 @@
+class CreateProperties < ActiveRecord::Migration[7.0]
+  def change
+    create_table :properties do |t|
+      t.string :title
+      t.string :img_url1
+      t.string :img_url2
+      t.string :img_url3
+      t.string :img_url4
+      t.string :img_url5
+      t.text :description
+      t.decimal :price
+      t.integer :bedrooms
+      t.integer :baths
+      t.boolean :kitchen
+      t.boolean :store
+      t.boolean :water
+      t.boolean :electricity
+      t.boolean :security
+      t.string :property_type
+      t.string :payment_freq
+      t.string :location
+      t.string :parking
+
+      t.timestamps
+    end
+  end
+end
