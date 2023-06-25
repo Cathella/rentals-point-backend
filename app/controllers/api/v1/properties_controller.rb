@@ -16,6 +16,13 @@ module Api
         end
       end
 
+      def show
+        property = Property.find(params[:id])
+        render json: property
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Property not found' }, status: :not_found
+      end
+
       private
 
       def property_params
