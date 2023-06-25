@@ -8,7 +8,7 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.string :img_url4
       t.string :img_url5
       t.text :description
-      t.decimal :price
+      t.integer :price
       t.integer :bedrooms
       t.integer :baths
       t.boolean :kitchen

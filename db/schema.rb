@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_145353) do
     t.string "img_url4"
     t.string "img_url5"
     t.text "description"
-    t.decimal "price"
+    t.integer "price"
     t.integer "bedrooms"
     t.integer "baths"
     t.boolean "kitchen"
