@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  img_url1: MyString
+  img_url2: MyString
+  img_url3: MyString
+  img_url4: MyString
+  img_url5: MyString
+  description: MyText
+  price: 9.99
+  bedrooms: 1
+  baths: 1
+  kitchen: false
+  store: false
+  water: false
+  electricity: false
+  security: false
+  property_type: MyString
+  payment_freq: MyString
+  location: MyString
+  parking: MyString
+
+two:
+  title: MyString
+  img_url1: MyString
+  img_url2: MyString
+  img_url3: MyString
+  img_url4: MyString
+  img_url5: MyString
+  description: MyText
+  price: 9.99
+  bedrooms: 1
+  baths: 1
+  kitchen: false
+  store: false
+  water: false
+  electricity: false
+  security: false
+  property_type: MyString
+  payment_freq: MyString
+  location: MyString
+  parking: MyString
