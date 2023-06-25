@@ -1,6 +1,11 @@
 module Api
   module V1
     class PropertiesController < ApplicationController
+      def index
+        properties = Property.all
+        render json: properties
+      end
+      
       def create
         property = Property.new(property_params)
 
