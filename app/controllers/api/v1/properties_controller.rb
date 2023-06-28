@@ -2,7 +2,11 @@ module Api
   module V1
     class PropertiesController < ApplicationController
       def index
-        properties = Property.all
+        if params[:property_type]
+          properties = Property.where(property_type: params[:property_type])
+        else
+          properties = Property.all
+        end
         render json: properties
       end
       
