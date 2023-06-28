@@ -2,11 +2,12 @@ module Api
   module V1
     class PropertiesController < ApplicationController
       def index
-        if params[:property_type]
+        if params[:property_type].present? && valid_property_type?(params[:property_type])
           properties = Property.where(property_type: params[:property_type])
         else
           properties = Property.all
         end
+
         render json: properties
       end
       
@@ -28,6 +29,13 @@ module Api
       end
 
       private
+
+      def valid_property_type?(property_type)
+        # Add your property type validation logic here
+        # For example, you can check if the property type is one of the allowed types
+        allowed_types = ['house', 'apartment', 'rental', 'shop', 'office']
+        allowed_types.include?(property_type.downcase)
+      end
 
       def property_params
         params.require(:property).permit(
