@@ -34,6 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_145353) do
     t.string "payment_freq"
     t.string "location"
     t.string "parking"
+    t.string "owner_name"
+    t.string "owner_contact"
+    t.string "owner_gender"
+    t.string "property_avail"
+    t.string "lives"
+    t.string "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -57,7 +57,13 @@ module Api
           :parking,
           :location,
           :payment_freq,
-          :property_type
+          :property_type,
+          :owner_name,
+          :owner_contact,
+          :owner_gender,
+          :property_avail,
+          :lives,
+          :video_url
         )
       end
     end
