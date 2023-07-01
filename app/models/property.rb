@@ -6,5 +6,5 @@ class Property < ApplicationRecord
   validates :kitchen, :store, :water, :electricity, :security, inclusion: { in: [true, false] }
   validates :parking, :property_avail, inclusion: { in: ['Available', 'Not Available'] }
   validates :payment_freq, presence: true, inclusion: { in: ['night', 'week', 'month', 'year'] }
-  validates :property_type, presence: true, inclusion: { in: ['House', 'Apartment', 'Office', 'Shop', 'Rental'] }
+  validates :property_type, presence: true, inclusion: { in: ['house', 'apartment', 'office', 'shop', 'rental'] }
 end
