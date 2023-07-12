@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create]
       post '/login', to: 'users#login'
-      resources :properties, only: [:index, :create, :show]
+      resources :properties, only: [:index, :create, :show, :update]
     end
   end  
 end
