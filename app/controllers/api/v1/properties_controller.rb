@@ -35,6 +35,14 @@ module Api
         render json: { error: 'Property not found' }, status: :not_found
       end
 
+      def destroy
+        property = Property.find(params[:id])
+        property.destroy
+        render json: { message: 'Property deleted successfully' }
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Property not found' }, status: :not_found
+      end
+
       private
 
       def property_params
