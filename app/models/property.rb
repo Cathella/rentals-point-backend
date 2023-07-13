@@ -7,4 +7,10 @@ class Property < ApplicationRecord
   validates :parking, :property_avail, inclusion: { in: ['Available', 'Not Available'] }
   validates :payment_freq, presence: true, inclusion: { in: ['night', 'week', 'month', 'year'] }
   validates :property_type, presence: true, inclusion: { in: ['house', 'apartment', 'office', 'shop', 'rental'] }
+
+  
+  scope :filter_by_location, ->(location) { where(location: location) }
+  scope :filter_by_bedrooms, ->(bedrooms) { where(bedrooms: bedrooms) }
+  scope :filter_by_availability, ->(property_avail) { where(property_avail: property_avail) }
+  scope :filter_by_property_type, ->(property_type) { where(property_type: property_type) }
 end

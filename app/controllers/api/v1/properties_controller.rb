@@ -3,6 +3,13 @@ module Api
     class PropertiesController < ApplicationController
       def index
         properties = Property.all
+
+        # Apply filters based on query parameters
+        properties = properties.filter_by_location(params[:location]) if params[:location].present?
+        properties = properties.filter_by_bedrooms(params[:bedrooms]) if params[:bedrooms].present?
+        properties = properties.filter_by_availability(params[:property_avail]) if params[:property_avail].present?
+        properties = properties.filter_by_property_type(params[:property_type]) if params[:property_type].present?
+
         render json: properties
       end
       
