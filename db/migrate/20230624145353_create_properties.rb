@@ -20,6 +20,12 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.string :payment_freq
       t.string :location
       t.string :parking
+      t.string :owner_name
+      t.string :owner_contact
+      t.string :owner_gender
+      t.string :property_avail
+      t.string :lives
+      t.string :video_url
 
       t.timestamps
     end
