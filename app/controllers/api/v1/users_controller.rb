@@ -19,7 +19,7 @@ module Api
         if user && user.authenticate(params[:password])
           # Generate a token (e.g., using JWT) and return it to the client for authentication
           token = generate_token(user)
-          render json: { token: token }
+          render json: { token: token, username: user.username, accountType: user.account }
         else
           render json: { error: 'Invalid email or password' }, status: :unauthorized
         end
