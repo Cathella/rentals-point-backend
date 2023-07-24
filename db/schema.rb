@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_23_161312) do
     t.string "housemate_gender"
     t.integer "housemate_age"
     t.string "lifestyle"
+    t.text "special_notes"
     t.decimal "budget"
     t.string "facebook"
     t.string "instagram"

@@ -5,7 +5,7 @@ class Api::V1::UserProfilesController < ApplicationController
 
     render json: user_profiles
   end
-  
+
   # POST /api/v1/user_profiles
   def create
     user = current_user
@@ -43,6 +43,20 @@ class Api::V1::UserProfilesController < ApplicationController
   private
 
   def user_profile_params
-    params.require(:user_profile).permit(:name, :bio, :preferences, :budget)
+    params.require(:user_profile).permit(
+      :name, 
+      :phone, 
+      :gender, 
+      :age, 
+      :bio, 
+      :housemate_gender, 
+      :housemate_age, 
+      :lifestyle, 
+      :special_notes,
+      :budget, 
+      :facebook, 
+      :instagram, 
+      :twitter
+    )
   end
 end

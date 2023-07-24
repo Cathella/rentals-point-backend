@@ -10,6 +10,7 @@ class CreateUserProfiles < ActiveRecord::Migration[7.0]
       t.string :housemate_gender
       t.integer :housemate_age
       t.string :lifestyle
+      t.text :special_notes
       t.decimal :budget
       t.string :facebook
       t.string :instagram
