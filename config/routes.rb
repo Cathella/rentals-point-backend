@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       post '/login', to: 'users#login'
       resources :properties, only: [:index, :create, :show, :update, :destroy]
+      resources :user_profiles, only: [:index, :create, :show, :update]
     end
   end  
 end
