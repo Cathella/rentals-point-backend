@@ -1,4 +1,6 @@
 class Api::V1::UserProfilesController < ApplicationController
+  before_action :authenticate_request, except: [:index]
+  
   # GET /api/v1/user_profiles
   def index
     user_profiles = UserProfile.all
@@ -9,7 +11,8 @@ class Api::V1::UserProfilesController < ApplicationController
   # POST /api/v1/user_profiles
   def create
     user = current_user
-    user_profile = user.build_user_profile(user_profile_params)
+    user_profile = UserProfile.new(user_profile_params)
+    user_profile.user = user
 
     if user_profile.save
       render json: { message: 'User profile created successfully' }, status: :created
